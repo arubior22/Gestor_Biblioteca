@@ -41,7 +41,9 @@ public class BibliotecaMain {
 
         System.out.println("Introduce contraseña");
         String contraseña = sc.nextLine();
-
+        /*declaro una variable usuarios2 de tipo Usuarios q viene de la clase Usuarios, 
+        usuarios es el array q contiene todos los obejtos o atributos de la clase Usuarios
+          */
         for (Usuarios usuarios2 : usuarios) {
             /*equalsIgnoreCase ,compara 2 cadenas, y se usa con String
              * se usa para verificar si ambas cadenas son =
