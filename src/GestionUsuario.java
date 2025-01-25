@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 
 public class GestionUsuario {
-    private Usuarios[] gestionUsuarios;
+    private Usuarios[] gestionUsuario;
     private int contador;
 
     /*
@@ -10,12 +10,12 @@ public class GestionUsuario {
      * un constructor que tendra de tamaño 50
      */
     public GestionUsuario() {
-        this.gestionUsuarios = new Usuarios[50];
+        this.gestionUsuario = new Usuarios[50];
         this.contador = 0;
 
         /* creare ya el admin por defecto para q sea el admin1 */
-        Usuarios admin = new Usuarios("Administrador1", "admin.biblioteca.es", Rol.ADMIN);
-        gestionUsuarios[contador] = admin;
+        Usuarios admin = new Usuarios("Admin1@gmail", "452642", Rol.ADMIN);
+        gestionUsuario[contador] = admin;
         contador++;
     }
 
@@ -40,6 +40,7 @@ public class GestionUsuario {
                     break;
 
                 case 0:
+                    
                     System.out.println("Saliendo de Gestion de Usuarios....");
                     System.out.println();
                     break;
@@ -53,11 +54,11 @@ public class GestionUsuario {
 
     private void addUsuario(Scanner scanner) {
         scanner.nextLine();
-        System.out.println("Introduce nombre de usuario: ");
-        String nombre = scanner.nextLine();
-
-        System.out.println("Introduce email para el usuario: ");
+        System.out.println("Introduce email: ");
         String email = scanner.nextLine();
+
+        System.out.println("Introduce contraseña: ");
+        String contraseña = scanner.nextLine();
 
         System.out.println("Introduce rol (ADMIN/USUARIO): ");
         String tipoRol = scanner.nextLine().toUpperCase();
@@ -75,7 +76,7 @@ public class GestionUsuario {
             rol = Rol.USUARIO;
         }
 
-        gestionUsuarios[contador] = new Usuarios(nombre, email, rol);
+        gestionUsuario[contador] = new Usuarios(email, contraseña, rol);
         contador++;
         System.out.println("Usuario añadido correctamente");
 
@@ -87,7 +88,7 @@ public class GestionUsuario {
         } else {
             System.out.println("\nUSUARIOS REGISTRADOS:");
             for (int i = 0; i < contador; i++) {
-                System.out.println(gestionUsuarios[i]);
+                System.out.println(gestionUsuario[i]);
             }
         }
 
