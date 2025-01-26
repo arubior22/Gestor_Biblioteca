@@ -4,29 +4,30 @@ import java.util.Scanner;
 public class GestionUsuario {
     private Usuarios[] gestionUsuario;
     private int contador;
+  
 
     /*
      * aqui vamos a crear
      * un constructor que tendra de tamaño 50
      */
-    public GestionUsuario() {
+    public GestionUsuario(BibliotecaMain bibliotecaMain) {
         this.gestionUsuario = new Usuarios[50];
         this.contador = 0;
-
-        /* creare ya el admin por defecto para q sea el admin1 */
-        Usuarios admin = new Usuarios("Admin1@gmail", "452642", Rol.ADMIN);
-        gestionUsuario[contador] = admin;
-        contador++;
     }
 
-    public void menu() {
+
+
+    public void menu(Usuarios usuarioActual) {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
+        boolean salir = false;
+       
         do {
             System.out.println("\nGESTION DE USUARIOS");
             System.out.println("-------------------");
             System.out.println("1.Añadir Usuario.");
             System.out.println("2.Mostrar Usuarios");
+            System.out.println("3.Volver al Menú");
             System.out.println("0.Salir");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -39,16 +40,20 @@ public class GestionUsuario {
                     mostrarUsuarios();
                     break;
 
+                    case 3:
+                    return;
+
                 case 0:
                     
                     System.out.println("Saliendo de Gestion de Usuarios....");
+                    salir = true;
                     System.out.println();
                     break;
 
                 default:
                     break;
             }
-        } while (opcion != 0);
+        } while (!salir);
         scanner.close();
     }
 
@@ -82,7 +87,14 @@ public class GestionUsuario {
 
     }
 
-    private void mostrarUsuarios() {
+    public void usuarioDefinido(Usuarios [] usuariosFijados){
+        for(Usuarios usuarios : usuariosFijados ){
+            gestionUsuario[contador++] = usuarios;
+        }
+    }
+
+
+    public void mostrarUsuarios() {
         if (contador == 0) {
             System.out.println("No hay usuarios registrados.");
         } else {
@@ -93,5 +105,7 @@ public class GestionUsuario {
         }
 
     }
+
+
 
 }
