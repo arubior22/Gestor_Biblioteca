@@ -5,10 +5,7 @@ public class BibliotecaMain {
     public static void main(String[] args) {
         Usuarios[] usuarios = new Usuarios[3];
         Gestion_libros gestion_libros = new Gestion_libros();   
-        Usuarios usuarioActual;
-
-     
-
+        Usuarios usuarioActual;   
         /*
          * declaramos una variable usuarioActual, ya q al inicio tenemos q probar q
          * entre con usuarios(clase)
