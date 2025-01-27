@@ -2,11 +2,6 @@ import java.util.Scanner;
 
 public class BibliotecaMain {
     public static Scanner sc = new Scanner(System.in);
-    // private static Usuarios[] usuarios = new Usuarios[3];
-    // private static Gestion_libros gestion_libros = new Gestion_libros();
-    // private static GestionUsuario gestionUsuario ;
-    public static Usuarios usuarioActual;
-
     public static void main(String[] args) {
         Usuarios[] usuarios = new Usuarios[3];
         Gestion_libros gestion_libros = new Gestion_libros();   
