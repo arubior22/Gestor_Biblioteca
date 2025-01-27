@@ -10,7 +10,7 @@ public class Gestion_libros {
     public void agregarLibro(String titulo, String autor, String categoria , boolean mostrarMensaje){
         if (contadorLibros < Max_Libros){
             libros[contadorLibros++] = new Libros(titulo, autor, categoria);
-            System.out.println("Libro agregado correctamente.");
+            //System.out.println("Libro agregado correctamente.");
         } else {
             System.out.println("No se pueden agregar más libros. Cupo lleno.");
         }

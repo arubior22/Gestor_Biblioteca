@@ -43,6 +43,24 @@ public class BibliotecaMain {
     private static void inicioLibros() {
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela",true);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", true);
         System.out.println("Libros de inicio agregados.");
         System.out.println();
     }
@@ -97,7 +115,7 @@ public class BibliotecaMain {
             }
 
             System.out.print("Seleccione una opción: ");
-            opcion = sc.nextInt();
+            opcion = Integer.parseInt(sc.nextLine());
             switch (opcion) {
                 case 1:
                     if (usuarioActual.getRol()== Rol.ADMIN) {
@@ -165,6 +183,7 @@ public class BibliotecaMain {
         String categoria = sc.nextLine();
 
         gestion_libros.agregarLibro(titulo, autor, categoria, true);
+
     }
 
 
