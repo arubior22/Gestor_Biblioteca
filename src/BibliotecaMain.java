@@ -2,17 +2,32 @@ import java.util.Scanner;
 
 public class BibliotecaMain {
     public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         Usuarios[] usuarios = new Usuarios[3];
-        Gestion_libros gestion_libros = new Gestion_libros();   
-        Usuarios usuarioActual;   
+        Gestion_libros gestion_libros = new Gestion_libros();
+        Usuarios usuarioActual;
+
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+
+
+    
         /*
          * declaramos una variable usuarioActual, ya q al inicio tenemos q probar q
          * entre con usuarios(clase)
          */
         usuarioActual(usuarios);
-        inicioLibros(gestion_libros);
-   
 
         /*
          * creamos el metodo pantallalogin, que devuelve un objeto de tipo
@@ -21,7 +36,7 @@ public class BibliotecaMain {
         usuarioActual = pantallalogin(usuarios);
         if (usuarioActual != null) {
 
-            mostrarMenu(usuarioActual,gestion_libros,usuarios);
+            mostrarMenu(usuarioActual, gestion_libros, usuarios);
 
         }
         /* lo asigna a la variable inicioUsuarios. */
@@ -31,31 +46,13 @@ public class BibliotecaMain {
 
     }
 
-    private static void usuarioActual(Usuarios [] usuarios) {
+    private static void usuarioActual(Usuarios[] usuarios) {
         usuarios[0] = new Usuarios("admin@biblioteca.com", "admin123", Rol.ADMIN);
         usuarios[1] = new Usuarios("usuario1@biblioteca.com", "pass1", Rol.USUARIO);
         usuarios[2] = new Usuarios("rebe@gmail.com", "admin", Rol.ADMIN);
     }
 
-    private static void inicioLibros(Gestion_libros gestion_libros) {
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-
-        System.out.println("Libros de inicio agregados.");
-        System.out.println();
-    }
-
-    private static Usuarios pantallalogin(Usuarios [] usuarios) {
+    private static Usuarios pantallalogin(Usuarios[] usuarios) {
 
         System.out.println("Bienvenid@ a Libreria Manolo");
         System.out.println("Ingrese tu email");
@@ -84,7 +81,7 @@ public class BibliotecaMain {
         return null;
     }
 
-    public static void mostrarMenu(Usuarios usuarioActual,Gestion_libros gestion_libros,Usuarios [] usuarios) {
+    public static void mostrarMenu(Usuarios usuarioActual, Gestion_libros gestion_libros, Usuarios[] usuarios) {
         int opcion = 0;
         boolean salir = false;
 
@@ -105,6 +102,7 @@ public class BibliotecaMain {
 
             System.out.print("Seleccione una opción: ");
             opcion = Integer.parseInt(sc.nextLine());
+            //sc.nextLine(); 
             switch (opcion) {
                 case 1:
                     if (usuarioActual.getRol() == Rol.ADMIN) {
@@ -122,8 +120,11 @@ public class BibliotecaMain {
                         // agregarLibro();
                         /* llamo al metodo agregar libro agregarLibro(inicioUsuarios) */
                     } else {
-                        System.out.println("No tienes permisos para agregar libros.");
-                        // buscarLibros();
+                        System.out.println("Ingrese el titulo,autor o categoria del libros a buscar: ");
+                        String busqueda = sc.nextLine();
+                        gestion_libros.buscarLibros(busqueda);
+                        
+                        
                         /* aqui llamo al metodo buscar libro */
                     }
                     break;
@@ -138,17 +139,19 @@ public class BibliotecaMain {
                     } else {
 
                         System.out.println("No tienes permisos para eliminar libros.");
-                        // gestion_libros.mostrarLibros();
+                        gestion_libros.mostrarLibros();
                         /* aqui llamo a gestion_libros.mostrarlibros() */
                     }
                     break;
 
                 case 3:
+                System.out.println("Ingrese el titulo, autor o categoria del libro a buscar: ");
+                String busqueda = sc.nextLine();
+                // Llamas al método 'buscarLibros' de la instancia 'gestion_libros' pasando el texto de búsqueda
+                gestion_libros.buscarLibros(busqueda);
 
-                    System.out.println("Ingrese el titulo,autor o categoria del libros a buscar: ");
-                    String busqueda = sc.nextLine();
-                    gestion_libros.buscarLibros(busqueda);
-                    // buscarLibros();
+                 
+                   // buscarLibros();
                     /* aqui llamamos a buscarLibro() */
                     break;
 
@@ -181,5 +184,6 @@ public class BibliotecaMain {
 
     }
 
+ 
 
 }
