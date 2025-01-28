@@ -47,6 +47,8 @@ public class Gestion_libros {
                 System.out.println(libros[i]);
                 encontrado = true;
             }
+
+   
         }
         if (!encontrado) {
             System.out.println("El libro introducido no coincide con ningun campo.");

@@ -11,16 +11,15 @@ public class BibliotecaMain {
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
+        gestion_libros.agregarLibro("El Principito", "Antoine de Saint-Exupéry", "Fábula y literatura infantil", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("Los pilares de la Tierra", "Ken Follett", "Novela histórica", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-        gestion_libros.agregarLibro("Cien años de soledad", "Garcia Marquez", "Realismo", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
 
@@ -147,6 +146,7 @@ public class BibliotecaMain {
                     break;
 
                 case 3:
+              
                 System.out.println("Ingrese el titulo, autor o categoria del libro a buscar: ");
                 String busqueda = sc.nextLine();
                 // Llamas al método 'buscarLibros' de la instancia 'gestion_libros' pasando el texto de búsqueda
