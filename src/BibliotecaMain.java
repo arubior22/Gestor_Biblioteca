@@ -20,7 +20,9 @@ public class BibliotecaMain {
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
         gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
         gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
-
+        gestion_libros.agregarLibro("Cien años de soledad", "Garcia Marquez", "Realismo", false);
+        gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela", false);
+        gestion_libros.agregarLibro("1984", "Orwell", "Distopía", false);
 
     
         /*
