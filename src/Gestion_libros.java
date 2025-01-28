@@ -1,14 +1,20 @@
 public class Gestion_libros {
 
-    private static final int Max_Libros = 50;
-    private Libros[] libros = new Libros[Max_Libros];
+    private static final int tam = 50;
+    private Libros[] libros = new Libros[tam];
     private int contadorLibros = 0;
 
+    public void librosRegistrados(Libros l){
+        if (contadorLibros < tam) {
+            libros[contadorLibros] = l;
+            contadorLibros++;
+        } 
+    }
     /*
      * Para agregar los libros:
      */
-    public void agregarLibro(String titulo, String autor, String categoria , boolean mostrarMensaje){
-        if (contadorLibros < Max_Libros){
+    public void agregarLibro(String titulo, String autor, String categoria){
+        if (contadorLibros < tam){
             libros[contadorLibros++] = new Libros(titulo, autor, categoria);
             System.out.println("Libro agregado correctamente.");
         } else {

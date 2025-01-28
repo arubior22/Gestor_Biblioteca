@@ -10,14 +10,12 @@ public class GestionUsuario {
      * aqui vamos a crear
      * un constructor que tendra de tamaño 50
      */
-    public GestionUsuario(BibliotecaMain bibliotecaMain) {
+    public GestionUsuario() {
         this.gestionUsuario = new Usuarios[50];
         this.contador = 0;
     }
 
-
-
-    public void menu(Usuarios usuarioActual) {
+    public void menu(Usuarios [] usuarios) {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
         boolean salir = false;
