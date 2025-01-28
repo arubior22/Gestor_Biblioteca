@@ -41,14 +41,12 @@ public class Gestion_libros {
         boolean encontrado = false;
         System.out.println("Resultados de la búsqueda: ");
         for(int i =0; i < contadorLibros; i++){
-            if (libros[i].getTitulo().equalsIgnoreCase(campos) ||
-                libros[i].getAutor().equalsIgnoreCase(campos) ||
-                libros[i].getCategoria().equalsIgnoreCase(campos)) {
-                System.out.println(libros[i]);
-                encontrado = true;
-            }
-
-   
+            if (libros[i].getTitulo().toLowerCase().contains(campos.toLowerCase()) ||
+            libros[i].getAutor().toLowerCase().contains(campos.toLowerCase()) ||
+            libros[i].getCategoria().toLowerCase().contains(campos.toLowerCase())) {
+            System.out.println(libros[i]);
+            encontrado = true;
+        }
         }
         if (!encontrado) {
             System.out.println("El libro introducido no coincide con ningun campo.");
