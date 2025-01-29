@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class GestionUsuario {
     private Usuarios[] gestionUsuario;
     private int contador;
-  
-
+    
     /*
      * aqui vamos a crear
      * un constructor que tendra de tamaño 50
@@ -13,9 +12,8 @@ public class GestionUsuario {
     public GestionUsuario() {
         this.gestionUsuario = new Usuarios[50];
         this.contador = 0;
+        
     }
-
-
 
     public void menu(Usuarios [] usuarios) {
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +38,7 @@ public class GestionUsuario {
                     mostrarUsuarios();
                     break;
 
-                    case 3:
+                case 3:
                     return;
 
                 case 0:
@@ -105,7 +103,5 @@ public class GestionUsuario {
         }
 
     }
-
-
 
 }

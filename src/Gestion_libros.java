@@ -1,19 +1,22 @@
 public class Gestion_libros {
 
-    private static final int Max_Libros = 50;
-    private Libros[] libros = new Libros[Max_Libros];
+    private static final int tam = 50;
+    private Libros[] libros = new Libros[tam];
     private int contadorLibros = 0;
 
+    public void librosRegistrados(Libros l){
+        if (contadorLibros < tam) {
+            libros[contadorLibros] = l;
+            contadorLibros++;
+        } 
+    }
     /*
      * Para agregar los libros:
      */
-    public void agregarLibro(String titulo, String autor, String categoria , boolean mostrarMensaje){
-        if (contadorLibros < Max_Libros){
+    public void agregarLibro(String titulo, String autor, String categoria){
+        if (contadorLibros < tam){
             libros[contadorLibros++] = new Libros(titulo, autor, categoria);
-            if (mostrarMensaje) {
-                System.out.println("Libro agregado correctamente.");  
-            }
-           
+            System.out.println("Libro agregado correctamente.");
         } else {
             System.out.println("No se pueden agregar más libros. Cupo lleno.");
         }
@@ -42,11 +45,11 @@ public class Gestion_libros {
         System.out.println("Resultados de la búsqueda: ");
         for(int i =0; i < contadorLibros; i++){
             if (libros[i].getTitulo().toLowerCase().contains(campos.toLowerCase()) ||
-            libros[i].getAutor().toLowerCase().contains(campos.toLowerCase()) ||
-            libros[i].getCategoria().toLowerCase().contains(campos.toLowerCase())) {
-            System.out.println(libros[i]);
-            encontrado = true;
-        }
+                libros[i].getAutor().toLowerCase().contains(campos.toLowerCase()) ||
+                libros[i].getCategoria().toLowerCase().contains(campos.toLowerCase())) {
+                System.out.println(libros[i]);
+                encontrado = true;
+            }
         }
         if (!encontrado) {
             System.out.println("El libro introducido no coincide con ningun campo.");
