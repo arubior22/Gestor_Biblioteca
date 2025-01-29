@@ -1,15 +1,10 @@
 import java.util.Scanner;
 
 public class BibliotecaMain {
-   /*  public static Scanner sc = new Scanner(System.in);
-    private static Usuarios[] usuarios = new Usuarios[3];
-    private static Gestion_libros gestion_libros = new Gestion_libros();
-    private static GestionUsuario gestionUsuario ;
-    public static Usuarios usuarioActual; */
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         Usuarios[] usuarios = new Usuarios[3];
-        Gestion_libros gestion_libros = new Gestion_libros();   
+        Gestion_libros gestion_libros = new Gestion_libros();  
         Usuarios usuarioActual;  
         /*
          * declaramos una variable inicioUsuarios, ya q al inicio tenemos q probar q entre con Usuarios(clase)
@@ -18,7 +13,7 @@ public class BibliotecaMain {
         /*inicioLibros(gestion_libros);*/
             
         
-        gestion_libros.librosRegistrados(new Libros("Cien años de soledad", "Gabriel García Márquez", "Realismo mágico"));
+        gestion_libros.librosRegistrados(new Libros("Cien anios de soledad", "Gabriel García Márquez", "Realismo mágico"));
         gestion_libros.librosRegistrados(new Libros("Dune", "Frank Herbert", "Ciencia ficción"));
         gestion_libros.librosRegistrados(new Libros("El hobbit", "J.R.R. Tolkien", "Fantasía épica"));
         gestion_libros.librosRegistrados(new Libros("El código Da Vinci", "Dan Brown", "Misterio y thriller"));
@@ -55,16 +50,6 @@ public class BibliotecaMain {
         usuarios[2] = new Usuarios("rebe@gmail.com", "admin", Rol.ADMIN);
     }
         
-    /*private static void inicioLibros() {
-       /*gestion_libros.agregarLibro("El Quijote", "Cervantes", "Novela");
-        gestion_libros.agregarLibro("1984", "Orwell", "Distopía");*/
-        
-    /*     System.out.println("Libros de inicio agregados.");
-        System.out.println();
-    }*/
-
-
-
     private static Usuarios pantallalogin(Usuarios [] usuarios) {
       
         System.out.println("Bienvenid@ a Libreria Manolo");
@@ -90,7 +75,6 @@ public class BibliotecaMain {
         }
         return null;
     }
-
     public static void mostrarMenu(Usuarios usuarioActual,Gestion_libros gestion_libros,Usuarios [] usuarios){
         int opcion = 0;
         boolean salir = false;
@@ -103,10 +87,12 @@ public class BibliotecaMain {
                 System.out.println("3.Buscar libro");
                 System.out.println("4.Mostar todos los libro");
                 System.out.println("5.Gestionar Usuarios");
+                System.out.println("6.Gestion prestamos."); 
                 System.out.println("0.Salir");
             } else if (usuarioActual.getRol()== Rol.USUARIO) {
                 System.out.println("1.Buscar libro");
                 System.out.println("2.Mostar todos los libro");
+                System.out.println("3.Gestion prestamos.");
                 System.out.println("0.Salir");
             }
 
@@ -150,11 +136,11 @@ public class BibliotecaMain {
                     case 3:
                     System.out.println("Ingresa el título, autor o categoría del libro a buscar: ");
                     String campos = sc.nextLine();
-                    gestion_libros.buscarLibros(campos);    //Por qué pones busqueda?
+                    gestion_libros.buscarLibros(campos);
+                    
                     break;
                     /*aqui llamamos a buscarLibro() */
                     
-
                     case 4:
                    
                         gestion_libros.mostrarLibros();
@@ -168,9 +154,17 @@ public class BibliotecaMain {
                         gestionUsuario.menu(usuarios);
                     
                         /*llamo al metodo agregar libro agregarLibro(inicioUsuarios) */
+                    } else {
+                        /*Gestion_prestamos.menu(usuarios);*/
+
                     }
                     break;
-
+                    case 6:
+                        if (usuarioActual.getRol() == Rol.ADMIN) {
+                            
+                           /*  Gestion_prestamos.menu(); */
+                            
+                    }
                     case 0:
                     System.out.println("Saliendo...");
                     salir = true;

@@ -3,6 +3,8 @@ public class Libros {
     private String titulo;
     private String autor;
     private String categoria;
+    /** Indica si el libro ha sido prestado*/
+    private boolean prestado;
     
     /**
      * Constructor parametrizado para los Libros
@@ -13,7 +15,10 @@ public class Libros {
     public Libros (String titulo, String autor, String categoria){
         this.titulo = titulo;
         this.autor = autor;
-        this.categoria= categoria;              
+        this.categoria = categoria; 
+        /* Añadido nuevo */
+        this.prestado = false;
+                
     }
 
     /**
@@ -23,7 +28,6 @@ public class Libros {
     public String getTitulo() {
         return this.titulo;
     }
-
     /**
      *  Establece el título del libro
      * @param titulo nuevo título del libro
@@ -45,9 +49,17 @@ public class Libros {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+    public boolean getPrestado(){
+        return this.prestado;
+    }
+    public void setPrestado(boolean prestado){
+        this.prestado = prestado;
+    }
+    
     @Override
     public String toString(){
-        return "Título: " + titulo + ", Autor: " + autor + ", Categoría: " + categoria;
+        return "Título: " + titulo + ", Autor: " + autor + ", Categoría: " + categoria + ", Prestado: " + (prestado ? "Si" : "No");
     }
     
 }
