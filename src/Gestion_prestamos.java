@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Gestion_prestamos {
+
     //Nuevo añadido 28/1/25 los 3 puntos de abajo
     private static final int MAX_LIBROS = 5;  // Número máximo de libros
     private static Libros[] libros = new Libros[MAX_LIBROS]; // Arreglo de libros
@@ -11,6 +12,8 @@ public class Gestion_prestamos {
         boolean salir = false;
     
     do {
+        System.out.println("\nBienvenido al Menu de Libreria Manolo " + usuarioActual.getEmail());
+        if (usuarioActual.getRol() == Rol.ADMIN) {
         System.out.println("\nGESTION DE PRESTAMOS");
         System.out.println("-------------------");
         System.out.println("1.Prestar Libros.");
@@ -18,8 +21,16 @@ public class Gestion_prestamos {
         System.out.println("3.MostrarLibrosPrestados");
         System.out.println("4.Volver al Menú");
         System.out.println("0.Salir");
+            
+        } else if (usuarioActual.getRol()== Rol.USUARIO) {
+        System.out.println("\nGESTION DE PRESTAMOS");
+        System.out.println("-------------------");
+        System.out.println("1.Prestar Libros.");
+        System.out.println("2.Devolver Libros.");
+        System.out.println("0.Salir");    
+        }
         System.out.print("Selecciona una opción: ");
-        opcion = sc.nextInt();
+        opcion = Integer.parseInt(sc.nextLine());
         switch (opcion) {
             case 1:
                 System.out.print("Ingresa el título del libro a prestar: ");
@@ -51,6 +62,7 @@ public class Gestion_prestamos {
             System.out.println("Opción inválida, intenta nuevamente.");
         }
     } while (!salir);
+    sc.close();
 }
      // Método para prestar un libro (cualquiera puede hacerlo)
     public void prestarLibro(String titulo) {
