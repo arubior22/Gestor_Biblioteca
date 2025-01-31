@@ -1,3 +1,9 @@
+/**
+ * @author Ana Rubio 
+ */
+
+
+
 import java.util.Scanner;
 public class Gestion_prestamos {
 

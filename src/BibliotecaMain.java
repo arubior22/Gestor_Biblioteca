@@ -1,3 +1,8 @@
+/**
+ * @author Ana Rubio _ Rebeca Poma
+ */
+
+
 import java.util.Scanner;
 
 public class BibliotecaMain {

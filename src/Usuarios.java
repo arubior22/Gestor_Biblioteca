@@ -1,3 +1,8 @@
+/**
+ * @author Rebeca Poma
+ */
+
+
 public class Usuarios {
     private String email;
     private String contraseña;

@@ -1,3 +1,9 @@
+/**
+ * @author Ana Rubio
+ */
+
+
+
 public class Gestion_libros {
 
     private static final int tam = 50;
